@@ -2,7 +2,7 @@ import asyncio
 from telegram import fetch_recent_posts
 
 if __name__ == "__main__":
-    channel = 1276198651
+    channel = "oneclickvpnkeys"
 
     recent_posts = asyncio.run(fetch_recent_posts(channel, days=1))
 
