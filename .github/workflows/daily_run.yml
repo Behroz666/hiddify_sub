@@ -8,6 +8,10 @@ on:
 jobs:
   run-python-script:
     runs-on: ubuntu-latest
+    env:
+      TG_API_ID: ${{ secrets.TG_API_ID }}
+      TG_API_HASH: ${{ secrets.TG_API_HASH }}
+
 
     steps:
       - name: Checkout repository
