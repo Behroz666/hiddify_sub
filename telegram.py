@@ -9,9 +9,9 @@ bot_token = os.environ["TG_BOT_TOKEN"]
 
 async def fetch_recent_posts(channel_username: str, days: int = 1) -> list:
 
-    client = TelegramClient("session", api_id, api_hash).start(bot_token=bot_token)
+    client = TelegramClient("session", api_id, api_hash)
 
-    await client.start()
+    await client.start(bot_token=bot_token)
 
     entity = await client.get_entity(channel_username)
     time_threshold = datetime.utcnow() - timedelta(days=days)
