@@ -5,10 +5,11 @@ import os
 
 api_id = int(os.environ["TG_API_ID"])
 api_hash = os.environ["TG_API_HASH"]
+bot_token = os.environ["TG_BOT_TOKEN"]
 
 async def fetch_recent_posts(channel_username: str, days: int = 1) -> list:
-    
-    client = TelegramClient("session", api_id, api_hash)
+
+    client = TelegramClient("session", api_id, api_hash).start(bot_token=bot_token)
 
     await client.start()
 
